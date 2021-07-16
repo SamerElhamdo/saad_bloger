@@ -1,6 +1,7 @@
 
 .directory
 .vscode/
+media/
 env/
 ssl/
 venv/
