@@ -1,0 +1,2 @@
+to translet use: django-admin.py makemessages -l ar
+to save translte file use: django-admin.py compilemessages

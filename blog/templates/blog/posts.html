@@ -1,0 +1,48 @@
+{% extends "base.html" %} 
+{% block nav_item_posts %}active{% endblock nav_item_posts %} 
+{% load i18n %}
+
+{% block content %}
+<h3 class="text-center m-5"> {% trans 'My Posts' %}</h3>
+<div class="row">
+    <!-- Blog Entries Column -->
+    {% for post in post_list %}
+
+    <div class="col-md-4 mt-3 wow bounceIn" data-wow-offset="50">
+        <div class="card">
+            <img class="card-img-top" src="{{ post.img.url }}" alt="Card image cap">
+            <div class="card-body">
+
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{post.content|striptags|safe|slice:":200" }}</p>
+                <div class="text-center">
+                    <a href="{{ post.get_absolute_url }}" class="btn btn-main-color">{% trans 'Read More...' %}</a>
+                </div>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+
+</div>
+<nav aria-label="...">
+    <ul class="pagination  justify-content-center mt-5" style="direction: ltr;">
+        {% if page_obj.has_previous %}
+
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">{% trans 'Previous' %}</a>
+      </li>
+        {% endif %}
+
+      <li class="page-item active">
+        <a class="page-link" href="#">{{ page_obj.number }} <span class="sr-only">(current)</span></a>
+      </li>
+
+        {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">{% trans 'Next' %}</a>
+      </li>
+        {% endif %}
+    </ul>
+</nav>
+
+{% endblock %}

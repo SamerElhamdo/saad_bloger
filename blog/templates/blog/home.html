@@ -1,0 +1,35 @@
+{% extends "base.html" %} 
+{% block nav_item_home %}active{% endblock nav_item_home %} 
+{% load i18n %}
+
+{% block content %}
+
+
+    <h3 class="text-center">{% trans 'Last Of Post' %}</h3>
+    <div class="row">
+        <!-- Blog Entries Column -->
+        {% for post in post_list %}
+
+        <div class="col-md-4 mt-3 wow bounceIn" data-wow-offset="50">
+            <div class="card">
+                <img class="card-img-top" src="{{ post.img.url }}" alt="Card image cap">
+                <div class="card-body">
+
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{post.content|striptags|safe|slice:":200" }}</p>
+                    <div class="text-center">
+                        <a href="{{ post.get_absolute_url }}" class="btn btn-main-color">{% trans 'Read More...' %}</a>
+                    </div>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+
+    </div>
+    <div class="text-center mt-3">
+
+        <a class="btn btn-main-color" href="#">{%trans 'Show All Posts' %} <span class="m-3"><i class="fas fa-link"></i></span></a> 
+    </div>
+
+
+{% endblock %}

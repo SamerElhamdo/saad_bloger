@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-16 20:13+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: blog/admin.py:33
+msgid "my admin"
+msgstr "لوحة التحكم"
+
+#: blog/apps.py:10
+msgid "blog"
+msgstr "المدونة"
+
+#: blog/models.py:17
+msgid "Draft"
+msgstr "مسودة"
+
+#: blog/models.py:18
+msgid "Publish"
+msgstr "مرئي"
+
+#: blog/models.py:22 blog/models.py:52 blog/models.py:74
+msgid "title"
+msgstr "العنوان"
+
+#: blog/models.py:23 blog/models.py:53 blog/models.py:76
+msgid "slug"
+msgstr ""
+
+#: blog/models.py:24 blog/models.py:54 blog/models.py:75
+msgid "img"
+msgstr "الصورة"
+
+#: blog/models.py:25 blog/models.py:55 blog/models.py:77
+msgid "author"
+msgstr ""
+
+#: blog/models.py:26 blog/models.py:57 blog/models.py:78
+msgid "updated_on"
+msgstr ""
+
+#: blog/models.py:27
+msgid "content"
+msgstr "المحتوى"
+
+#: blog/models.py:28 blog/models.py:60 blog/models.py:80
+msgid "created_on"
+msgstr "تاريخ الإنشاء"
+
+#: blog/models.py:29 blog/models.py:81
+msgid "status"
+msgstr "الحالة"
+
+#: blog/models.py:33
+msgid "Post"
+msgstr "منشور"
+
+#: blog/models.py:34
+msgid "posts"
+msgstr "المنشورات"
+
+#: blog/models.py:56
+msgid "writer"
+msgstr "أسم الكاتب"
+
+#: blog/models.py:58
+msgid "descrption"
+msgstr ""
+
+#: blog/models.py:59
+msgid "file_pdf"
+msgstr "ملف الكتاب"
+
+#: blog/models.py:64
+msgid "Book"
+msgstr "الكتب"
+
+#: blog/models.py:65 templates/base.html:38
+msgid "Books"
+msgstr "الكتب"
+
+#: blog/models.py:79
+msgid "youtube_url"
+msgstr "رابط اليوتيوب"
+
+#: blog/models.py:85
+msgid "Telawa"
+msgstr "تلاوة"
+
+#: blog/models.py:86
+msgid "Telawas"
+msgstr "التلاوات"
+
+#: blog/templates/blog/home.html:8
+msgid "Last Of Post"
+msgstr "أحدث المنشورات"
+
+#: blog/templates/blog/home.html:21 blog/templates/blog/posts.html:19
+msgid "Read More..."
+msgstr "إقرأ  المزيد..."
+
+#: blog/templates/blog/home.html:31
+msgid "Show All Posts"
+msgstr "عرض جميع المنشورات"
+
+#: blog/templates/blog/home.html:34
+
+msgid "Last Of Tweets"
+msgstr "أحدث التغريدات"
+
+#: blog/templates/blog/posts.html:6
+msgid "My Posts"
+msgstr "منشوراتي"
+
+#: blog/templates/blog/posts.html:32
+msgid "Previous"
+msgstr "السابق"
+
+#: blog/templates/blog/posts.html:42
+msgid "Next"
+msgstr "التالي"
+
+#: saad_bloger/settings.py:110
+msgid "Arabic"
+msgstr "عربي"
+
+#: saad_bloger/settings.py:111
+msgid "English"
+msgstr "انجليزي"
+
+#: templates/base.html:32
+msgid "Home"
+msgstr "الرئيسية"
+
+#: templates/base.html:35
+msgid "Posts"
+msgstr "منشوراتي"
+
+#: templates/base.html:41
+msgid "About Me"
+msgstr "عنّي"
+
+#: templates/base.html:44
+msgid "My Tweets"
+msgstr "تغريداتي"
+
+#: templates/base.html:48
+msgid "Admin Panel"
+msgstr "لوحة التحكم"
+
+#: templates/base.html:93
+msgid "Welcome to Saad Turkmeni Blog"
+msgstr "أهلاً بك في مدونة سعد التركماني"
+
+#: templates/base.html:94
+msgid "I will be very happy if you follow me on social media"
+msgstr "سأكون سعيداً لمتابعتك لي على منصات التواصل الإجتماعي"
+
+#~ msgid "Last Of Books"
+#~ msgstr "أحدث الكتب"
+
+#~ msgid "Contact Me"
+#~ msgstr "تواصل معي"

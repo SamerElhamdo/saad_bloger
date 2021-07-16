@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'MyWebFont';
+    src: url('../fonts/NeoSansArabic.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  }
+  html, body {
+      direction: rtl;
+      font-family: 'MyWebFont', sans-serif;
+      text-align: right;
+      color: #000;
+      min-height: 100vh;
+  }
+  
+
+  .navbar-nav {
+      margin-inline-start: auto;
+      padding-inline-start: 15px;
+  }
+
+  .navbar img {
+    position: absolute;
+    top: -8px;
+    width: 120px;
+    right: 0;
+
+  }
+  .navbar button.navbar-toggler {
+      float: left;
+      margin-left: 15px;
+
+  }
+
+  .navbar img {
+      margin-inline-end: auto;
+      margin-right: 15px;
+      
+  }
+
+ul.navbar-nav li {
+    text-align: center;
+    font-size: 16px;
+    padding: 0 10px;
+}
+ul.navbar-nav li a:hover {
+    background-color: goldenrod;
+    border-radius: 5px;
+}
+
+.navbar form {
+    height: 100%;
+}
+.navbar select.selectpicker {
+    background-color: goldenrod;
+    height: 100%;
+    border-radius: 5px;
+}
+.my-tweets-button {
+    background: #00acee;
+    border-radius: 5px;
+    color: #fff !important;
+}
+
+
+
+.btn-main-color {
+    color: #fff;
+    background-color: #223b33;
+    border-color: #223b33;
+}
+.main-color {
+    color: #223b33;
+
+}
+
+
+
+.card {
+    box-shadow: 3px 3px 10px #ddd;
+    border: .5px solid #ddd;
+}
+
+
+
+
+
+p.post-content {
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 1.7em;
+    font-style: italic;
+}
+
+
