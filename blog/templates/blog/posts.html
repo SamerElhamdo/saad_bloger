@@ -24,6 +24,7 @@
     {% endfor %}
 
 </div>
+{% if page_obj.has_previous or  page_obj.has_next %}
 <nav aria-label="...">
     <ul class="pagination  justify-content-center mt-5" style="direction: ltr;">
         {% if page_obj.has_previous %}
@@ -44,5 +45,6 @@
         {% endif %}
     </ul>
 </nav>
+{% endif %}
 
 {% endblock %}

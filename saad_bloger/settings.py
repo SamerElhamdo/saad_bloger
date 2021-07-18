@@ -8,17 +8,35 @@ from django.utils.translation import gettext_lazy as _
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = 'django-insecure-&m2ilf6_%7joy0lyis*=$oa5wyyep@o3071ae^u7knd_te5#r('
 
-DEBUG = False
-
-
-if DEBUG:
-    #from .secret_settings import secret_key
-    SECRET_KEY = "-local-key-local-key-local-key"
-else:
-
+if "SECRET_KEY" in os.environ:
     SECRET_KEY = os.getenv('SECRET_KEY')
+    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = 'saad-bloger'
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.me-south-1.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+    AWS_S3_OBJECT_PARAMETERS = {
+        'CacheControl': 'max-age=86400',
+    }
+
+    AWS_DEFAULT_ACL = 'public-read'
+
+    AWS_QUERYSTRING_AUTH = False
+
+    DEFAULT_FILE_STORAGE = 'saad_bloger.storage_backends.MediaStorage'
+else:
+    from .secret_settings import *
+    SECRET_KEY = SECRET_KEY_LOCAL
+    AWS_ACCESS_KEY_ID = AWS_ACCESS_KEY_ID_LOCAL
+    AWS_SECRET_ACCESS_KEY = AWS_SECRET_ACCESS_KEY_LOCAL
+
+
+       
+
+DEBUG = True
+
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -32,8 +50,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'blog',
     'ckeditor',
+    'ckeditor_uploader',
+    
 
 ]
 
@@ -144,6 +165,12 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+ 
+
+
+
+
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -163,10 +190,13 @@ CKEDITOR_CONFIGS = {
             ['TextColor', 'BGColor'],
             ['NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ['Link', 'Unlink'],
+            ['Image', 'File'],
             ['RemoveFormat', 'Source']
         ]
     }
 }
+CKEDITOR_UPLOAD_PATH = "uploads"
+CKEDITOR_BROWSE_SHOW_DIRS = True
 
 
 import dj_database_url 

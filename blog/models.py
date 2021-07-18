@@ -3,7 +3,12 @@ from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.urls import reverse
 
+from django.dispatch import receiver
+
+
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
+
 
 
 
@@ -24,7 +29,7 @@ class Post(models.Model):
     img = models.ImageField(upload_to='images/',  verbose_name= _("img"))
     author = models.ForeignKey(User, on_delete= models.CASCADE,related_name='blog_posts', verbose_name= _("author"), default=1)
     updated_on = models.DateTimeField(auto_now= True, verbose_name= _("updated_on"))
-    content = RichTextField(verbose_name= _("content"))
+    content = RichTextUploadingField(verbose_name= _("content"))
     created_on = models.DateTimeField(auto_now_add=True, verbose_name= _("created_on"))
     status = models.IntegerField(choices=STATUS, default=0, verbose_name= _("status"))
 
@@ -46,6 +51,10 @@ class Post(models.Model):
         value = self.title
         self.slug = slugify(value, allow_unicode=True)
         super().save(*args, **kwargs)
+
+@receiver(models.signals.post_delete, sender=Post)
+def remove_file_from_s3(sender, instance, using, **kwargs):
+	instance.img.delete(save=False)
 
 
 class Book(models.Model):
